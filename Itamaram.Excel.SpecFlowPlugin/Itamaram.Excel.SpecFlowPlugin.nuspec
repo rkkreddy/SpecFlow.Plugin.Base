@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Itamaram.Excel.SpecFlowPlugin</id>
+    <version>1.0.0</version>
+    <description>A simple SpecFlow plugin for loading examples from excel</description>
+    <authors>Itamar Amith</authors>
+    <tags>SpecFlow Gherkin Excel SpecFlowPlugin Plugin Generator Example Tests Testing</tags>
+    <dependencies>
+      <dependency id="SpecFlow" version="2.2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\*.dll" target="tools" />
+    <file src="App.config.transform" target="content" />
+  </files>
+</package>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Itamaram.SpecFlow.Plugin.Base</id>
+    <version>1.0.0</version>
+    <description>Base classes for creating SpecFlow plugins to generate examples based on tags</description>
+    <authors>Itamar Amith</authors>
+    <tags>SpecFlow Gherkin SpecFlowPlugin Plugin Generator Example Tests Testing</tags>
+    <dependencies>
+      <dependency id="SpecFlow.CustomPlugin" version="2.2.0" />
+    </dependencies>
+  </metadata>
+</package>

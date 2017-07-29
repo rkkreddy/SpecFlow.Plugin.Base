@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itamaram.SpecFlow.Plugin.Base", "Itamaram.SpecFlow.Plugin.Base\Itamaram.SpecFlow.Plugin.Base.csproj", "{6CBDF687-FC95-45A2-8936-E91AFDD91850}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itamaram.Excel.SpecFlowPlugin", "Itamaram.Excel.SpecFlowPlugin\Itamaram.Excel.SpecFlowPlugin.csproj", "{E4A5FD9C-C0E6-4283-9D09-B2EB6D01AFA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itamaram.Csv.SpecFlowPlugin", "Itamaram.Csv.SpecFlowPlugin\Itamaram.Csv.SpecFlowPlugin.csproj", "{5EC1BC45-5F8C-4E21-A111-118DA3F80D3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CBDF687-FC95-45A2-8936-E91AFDD91850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CBDF687-FC95-45A2-8936-E91AFDD91850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CBDF687-FC95-45A2-8936-E91AFDD91850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CBDF687-FC95-45A2-8936-E91AFDD91850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A5FD9C-C0E6-4283-9D09-B2EB6D01AFA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A5FD9C-C0E6-4283-9D09-B2EB6D01AFA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A5FD9C-C0E6-4283-9D09-B2EB6D01AFA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A5FD9C-C0E6-4283-9D09-B2EB6D01AFA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC1BC45-5F8C-4E21-A111-118DA3F80D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC1BC45-5F8C-4E21-A111-118DA3F80D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC1BC45-5F8C-4E21-A111-118DA3F80D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC1BC45-5F8C-4E21-A111-118DA3F80D3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
