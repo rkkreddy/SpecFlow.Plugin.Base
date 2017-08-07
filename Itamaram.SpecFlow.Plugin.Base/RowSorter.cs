@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Gherkin.Ast;
@@ -15,7 +16,9 @@ namespace Itamaram.SpecFlow.Plugin.Base
             if (header.Cells.Count() != first.Cells.Count())
                 return rows;
 
-            var map = header.Cells.Select((c, i) => new { c.Value, Index = i }).ToDictionary(o => o.Value, o => o.Index);
+            var map = header.Cells.Select((c, i) => new { c.Value, Index = i })
+                .ToDictionary(o => o.Value, o => o.Index, StringComparer.OrdinalIgnoreCase);
+
             var order = new int[header.Cells.Count()];
 
             foreach (var o in first.Cells.Select((c, i) => new { c.Value, Index = i }))
