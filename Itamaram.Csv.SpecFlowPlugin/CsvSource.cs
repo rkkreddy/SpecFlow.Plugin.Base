@@ -10,7 +10,7 @@ namespace Itamaram.Csv.SpecFlowPlugin
     {
         protected override string TagName { get; } = "csv";
 
-        public override IEnumerable<IEnumerable<string>> GetRowsInternal(string args, string dir, string specfile, IEnumerable<string> header)
+        public override IEnumerable<IEnumerable<string>> GetRowsInternal(string args, string dir, string specfile, ExamplesHeader header)
         {
             var readheader = false;
             var file = args;

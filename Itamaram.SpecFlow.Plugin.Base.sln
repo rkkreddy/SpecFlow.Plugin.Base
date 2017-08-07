@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itamaram.Excel.SpecFlowPlug
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itamaram.Csv.SpecFlowPlugin", "Itamaram.Csv.SpecFlowPlugin\Itamaram.Csv.SpecFlowPlugin.csproj", "{5EC1BC45-5F8C-4E21-A111-118DA3F80D3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itamaram.SpecFlow.Plugin.Base.Tests", "Itamaram.SpecFlow.Plugin.Base.Tests\Itamaram.SpecFlow.Plugin.Base.Tests.csproj", "{A0709979-9998-4C53-82D8-663FDD321F97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5EC1BC45-5F8C-4E21-A111-118DA3F80D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EC1BC45-5F8C-4E21-A111-118DA3F80D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EC1BC45-5F8C-4E21-A111-118DA3F80D3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0709979-9998-4C53-82D8-663FDD321F97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0709979-9998-4C53-82D8-663FDD321F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0709979-9998-4C53-82D8-663FDD321F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0709979-9998-4C53-82D8-663FDD321F97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

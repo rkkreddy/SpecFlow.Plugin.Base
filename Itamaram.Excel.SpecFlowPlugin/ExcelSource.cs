@@ -10,13 +10,13 @@ namespace Itamaram.Excel.SpecFlowPlugin
     {
         protected override string TagName { get; } = "excel";
 
-        public override IEnumerable<IEnumerable<string>> GetRowsInternal(string args, string dir, string specfile, IEnumerable<string> header)
+        public override IEnumerable<IEnumerable<string>> GetRowsInternal(string args, string dir, string specfile, ExamplesHeader header)
         {
             var parts = args.Split(new[] { ':' }, 2);
             var name = parts[0];
             var worksheet = parts.Length > 1 ? parts[1] : null;
 
-            var columns = header.Count();
+            var columns = header.Count;
 
             using (var excel = new ExcelPackage(new FileInfo(Path.Combine(dir, name))))
             {

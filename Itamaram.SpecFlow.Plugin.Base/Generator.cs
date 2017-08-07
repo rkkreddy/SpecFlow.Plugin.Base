@@ -46,7 +46,9 @@ namespace Itamaram.SpecFlow.Plugin.Base
 
             var unhandled = example.Tags.ToList();
 
-            var header = example.TableHeader.Cells.Select(c => c.Value).ToList();
+            var header = example.TableHeader != null
+                ? new ExamplesHeader(example.TableHeader.Cells.Select(c => c.Value))
+                : null;
 
             var rows = new List<TableRow>();
 
@@ -64,7 +66,12 @@ namespace Itamaram.SpecFlow.Plugin.Base
                 }
             }
 
-            return rows.Any() ? example.Clone(tags: unhandled, body: example.TableBody.Concat(rows)) : example;
+            if (!rows.Any())
+                return example;
+
+            return example.TableHeader == null
+                ? example.Clone(tags: unhandled, body: example.TableBody.Concat(rows.Skip(1)), header: rows.First())
+                : example.Clone(tags: unhandled, body: example.TableBody.Concat(RowSorter.MaybeSortRows(example.TableHeader, rows)));
         }
     }
 }

@@ -6,6 +6,6 @@ namespace Itamaram.SpecFlow.Plugin.Base
     {
         bool Handles(string tag);
 
-        IEnumerable<IEnumerable<string>> GetRows(string args, string path, IEnumerable<string> header);
+        IEnumerable<IEnumerable<string>> GetRows(string args, string path, ExamplesHeader header);
     }
 }
