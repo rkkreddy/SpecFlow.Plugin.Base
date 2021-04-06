@@ -1,4 +1,3 @@
 for %%p in (Itamaram.SpecFlow.Plugin.Base Itamaram.Csv.SpecFlowPlugin Itamaram.Excel.SpecFlowPlugin) do (
-	nuget pack %%p\%%p.csproj -Build -Prop Configuration=Release -version 1.2.0
+	dotnet pack %%p\%%p.csproj -c Release -p:Version=%1 -o .
 )
-pause

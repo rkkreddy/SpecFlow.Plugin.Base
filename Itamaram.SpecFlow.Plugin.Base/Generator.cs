@@ -4,10 +4,10 @@ using System.Linq;
 using Gherkin.Ast;
 using TechTalk.SpecFlow.Configuration;
 using TechTalk.SpecFlow.Generator;
+using TechTalk.SpecFlow.Generator.CodeDom;
 using TechTalk.SpecFlow.Generator.Interfaces;
 using TechTalk.SpecFlow.Generator.UnitTestConverter;
 using TechTalk.SpecFlow.Parser;
-using TechTalk.SpecFlow.Utils;
 
 namespace Itamaram.SpecFlow.Plugin.Base
 {
@@ -15,23 +15,37 @@ namespace Itamaram.SpecFlow.Plugin.Base
     {
         private readonly ExamplesGeneratorContainer container;
 
-        public Generator(SpecFlowConfiguration config, ProjectSettings settings, ITestHeaderWriter writer,
-            ITestUpToDateChecker checker, IFeatureGeneratorRegistry registry, CodeDomHelper dom,
-            ExamplesGeneratorContainer container)
-            : base(config, settings, writer, checker, registry, dom)
+        public Generator(
+            SpecFlowConfiguration specFlowConfiguration,
+            ProjectSettings projectSettings,
+            ITestHeaderWriter testHeaderWriter,
+            ITestUpToDateChecker testUpToDateChecker,
+            IFeatureGeneratorRegistry featureGeneratorRegistry,
+            CodeDomHelper codeDomHelper,
+            IGherkinParserFactory gherkinParserFactory,
+            ExamplesGeneratorContainer container
+            ) : base(
+                specFlowConfiguration,
+                projectSettings,
+                testHeaderWriter,
+                testUpToDateChecker,
+                featureGeneratorRegistry,
+                codeDomHelper,
+                gherkinParserFactory
+                )
         {
             this.container = container;
         }
 
-        protected override SpecFlowDocument ParseContent(SpecFlowGherkinParser parser, TextReader contentReader,
-            string sourceFilePath)
+        protected override SpecFlowDocument ParseContent(IGherkinParser parser, TextReader contentReader,
+            SpecFlowDocumentLocation documentLocation)
         {
-            var doc = base.ParseContent(parser, contentReader, sourceFilePath);
+            var doc = base.ParseContent(parser, contentReader, documentLocation);
             var children = doc.SpecFlowFeature.Children.Select(c => ProcessScenarioDefinition(c, doc));
             return doc.Clone(doc.SpecFlowFeature.Clone(children: children));
         }
 
-        private ScenarioDefinition ProcessScenarioDefinition(ScenarioDefinition definition, SpecFlowDocument doc)
+        private IHasLocation ProcessScenarioDefinition(IHasLocation definition, SpecFlowDocument doc)
         {
             if (definition is ScenarioOutline outline)
                 return outline.Clone(examples: outline.Examples.Select(e => HandleTags(e, doc)));
@@ -60,7 +74,14 @@ namespace Itamaram.SpecFlow.Plugin.Base
 
                     unhandled.Remove(tag);
 
-                    rows.AddRange(generator.GetRows(name, doc.SourceFilePath, header).Select(r => r.ToTableRow(doc)));
+                    var generated = generator.GetRows(name, doc.SourceFilePath, header)
+                        .Select(r => r.ToTableRow(doc))
+                        .ToList();
+
+                    if (!generated.Any())
+                        throw new SemanticParserException($"Generator '{name}' returned no examples", tag.Location);
+
+                    rows.AddRange(generated);
                 }
             }
 
