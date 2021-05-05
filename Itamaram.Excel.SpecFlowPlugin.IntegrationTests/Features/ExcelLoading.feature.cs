@@ -74,16 +74,18 @@ namespace Itamaram.Excel.SpecFlowPlugin.IntegrationTests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Load From Excel")]
-        [NUnit.Framework.TestCaseAttribute("10", "20", "30", null)]
-        public virtual void LoadFromExcel(string a, string b, string c, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("dot net Load From Excel")]
+        [NUnit.Framework.TestCaseAttribute(null)]
+        [NUnit.Framework.TestCaseAttribute(null)]
+        [NUnit.Framework.TestCaseAttribute(null)]
+        public virtual void DotNetLoadFromExcel(string one, string two, string three, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("A", a);
-            argumentsOfScenario.Add("B", b);
-            argumentsOfScenario.Add("C", c);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Load From Excel", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            argumentsOfScenario.Add("One", one);
+            argumentsOfScenario.Add("Two", two);
+            argumentsOfScenario.Add("Three", three);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("dot net Load From Excel", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -108,7 +110,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I have followed the instructions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
- testRunner.Then(string.Format("I should\'ve loaded {0} {1} {2}", a, b, c), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("I should\'ve loaded {0} {1} {2}", one, two, three), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

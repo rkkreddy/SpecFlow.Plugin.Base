@@ -1,10 +1,10 @@
 ﻿Feature: SpecFlowFeature
 	I want to load some excel stuffs
 
-Scenario Outline: Load From Excel
+Scenario Outline: Core Load From Excel
 	Given I have followed the instructions
-	Then I should've loaded <A> <B> <C>
+	Then I should've loaded <One> <Two> <Three>
 
 	@excel:Book1.xlsx:Sheet1
 	Examples: 
-	| A | B | C |
+	| One | Two | Three |

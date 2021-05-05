@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Itamaram.Excel.SpecFlowPlugin" Version="2.1.15" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="SpecFlow" Version="3.7.38" />
     <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.7.141" />
@@ -26,9 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Features\Book1.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <SpecFlowGeneratorPlugins Include="C:\Users\kreddyva\Source\Repos\rkkreddy\SpecFlow.Plugin.Base\Itamaram.Excel.SpecFlowPlugin\bin\Release\net471\Itamaram.Excel.SpecFlowPlugin.dll" />
   </ItemGroup>
 
 </Project>
