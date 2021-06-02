@@ -75,7 +75,7 @@ namespace Itamaram.Excel.SpecFlowPlugin.DotNetCore.IntegrationTests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Core Load From Excel")]
-        [NUnit.Framework.TestCaseAttribute("One", "Two", "great", null)]
+        [NUnit.Framework.TestCaseAttribute("One", "Two", "Four", null)]
         [NUnit.Framework.TestCaseAttribute("34", "34", "45", null)]
         [NUnit.Framework.TestCaseAttribute("121", "12", "34", null)]
         public virtual void CoreLoadFromExcel(string one, string two, string three, string[] exampleTags)

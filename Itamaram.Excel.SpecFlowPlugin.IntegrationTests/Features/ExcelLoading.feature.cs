@@ -75,9 +75,9 @@ namespace Itamaram.Excel.SpecFlowPlugin.IntegrationTests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("dot net Load From Excel")]
-        [NUnit.Framework.TestCaseAttribute(null)]
-        [NUnit.Framework.TestCaseAttribute(null)]
-        [NUnit.Framework.TestCaseAttribute(null)]
+        [NUnit.Framework.TestCaseAttribute("10", "20", "30", null)]
+        [NUnit.Framework.TestCaseAttribute("45", "54", "343", null)]
+        [NUnit.Framework.TestCaseAttribute("45", "565", "343", null)]
         public virtual void DotNetLoadFromExcel(string one, string two, string three, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;

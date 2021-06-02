@@ -26,7 +26,17 @@ Scenario Outline: Load From Excel
 ```
 
 The repo contains two sample projects which implement the above, one for [full dotnet](Itamaram.Excel.SpecFlowPlugin.IntegrationTests), and the other for [dotnet core](Itamaram.Excel.SpecFlowPlugin.DotNetCore.IntegrationTests). 
-
+## How to skip first row and consider it as header row
+1. Add a JSON file by name `ItamaramExcelConfig.json` to project's main directory
+2. Add entry as below
+    `{
+  "SkipFirstRow": true
+} 
+`
+1. Set value as `false` to not to skip the first row and read it as data row
+1. Make sure to have all Example table column headers in Excel sheet's first row
+1. Excel sheet can have the columns in any order
+1. Excel sheet can have more columns than required and this provides an advantage to use the same sheet for other scenarios
 # How to create a new plugin for example generation
 1. Create a project outputting an assembly with a name ending in `.SpecFlowPlugin`  
    This can be achieved by either using this suffix in the project name, or adding the `AssemblyName` to the `csproj` file.

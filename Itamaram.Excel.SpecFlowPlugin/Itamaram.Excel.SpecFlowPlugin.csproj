@@ -8,6 +8,9 @@
     <PackageProjectUrl>https://github.com/Itamaram/SpecFlow.Plugin.Base</PackageProjectUrl>
     <PackageTags>SpecFlow Gherkin Excel SpecFlowPlugin Plugin Generator Example Tests Testing</PackageTags>
     <BuildOutputTargetFolder>build</BuildOutputTargetFolder>
+	<Version>2.1.19</Version>
+	<IncludeSymbols>true</IncludeSymbols>
+	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
