@@ -8,3 +8,11 @@ Scenario Outline: Load From Excel
 	@excel:Book1.xlsx:Sheet1
 	Examples: 
 	| A | B | C |
+
+Scenario Outline: A second excel scenario in the same file
+	Given I have followed the instructions
+	Then I should've loaded <A> <B> <C>
+
+	@excel:Book1.xlsx:Sheet1
+	Examples: 
+	| A | B | C |
