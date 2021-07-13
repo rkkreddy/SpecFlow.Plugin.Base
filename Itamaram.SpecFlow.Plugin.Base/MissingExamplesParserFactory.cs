@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Gherkin;
 using TechTalk.SpecFlow.Parser;
@@ -32,11 +33,21 @@ namespace Itamaram.SpecFlow.Plugin.Base
             }
             catch (SemanticParserException e)
             {
-                if (Regex.IsMatch(e.Message, @"^\(\d+:\d+\): Scenario Outline '.*?' has no examples defined$"))
+                if (ShouldIgnoreException(e))
+                    return;
+
+                throw;
+            }
+            catch (CompositeParserException e)
+            {
+                if(e.Errors.All(ShouldIgnoreException))
                     return;
 
                 throw;
             }
         }
+
+        private static bool ShouldIgnoreException(ParserException e) =>
+            Regex.IsMatch(e.Message, @"^\(\d+:\d+\): Scenario Outline '.*?' has no examples defined$");
     }
 }
